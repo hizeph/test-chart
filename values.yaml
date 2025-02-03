@@ -14,4 +14,4 @@ deployment:
       memory: 150Mi
 
 ingress:
-  address: # e.g. echo-server.apps.4wm-development.azure.cloud.bmw
+  address:  echo-server-test.apps.4wm-development.azure.cloud.bmw
