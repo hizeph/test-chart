@@ -1,7 +1,7 @@
 deployment:
   image:
-    repository: nexus.bmwgroup.net:443/grafana/k6-operator
-    tag: controller-v0.0.19
+    repository: public.ecr.aws/v7n2v9r3/4wm-echo-server
+    tag: latest
 
   replicas: 1
 
