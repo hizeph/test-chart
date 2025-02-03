@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ template "echo-server.name" . }}
+spec:
+  ingressClassName: private
+  rules:
+  - host: {{ required "A valid .Values.ingress.address is required!" .Values.ingress.address }}
+    http:
+      paths:
+      - backend:
+          service:
+            name: {{ template "echo-server.name" . }}
+            port:
+              name: http
+        path: /
+        pathType: ImplementationSpecific
+  tls:
+  - hosts:
+    - {{ .Values.ingress.address }}
+    secretName: echo-server-tls

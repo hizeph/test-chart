@@ -1,0 +1,17 @@
+deployment:
+  image:
+    repository: nexus.bmwgroup.net:443/grafana/k6-operator
+    tag: controller-v0.0.19
+
+  replicas: 1
+
+  resources:
+    requests:
+      cpu: 100m
+      memory: 100Mi
+    limits:
+      cpu: 200m
+      memory: 150Mi
+
+ingress:
+  address: # e.g. echo-server.apps.4wm-development.azure.cloud.bmw

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: {{ template "echo-server.name" . }}
+  name: {{ template "echo-server.name" . }}
+spec:
+  internalTrafficPolicy: Cluster
+  ports:
+  - name: http
+    port: 8000
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: {{ template "echo-server.name" . }}
+  type: ClusterIP

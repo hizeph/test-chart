@@ -1,0 +1,4 @@
+
+Accessing your echo-server:
+- https://{{ .Values.ingress.address }}
+- https://{{ .Values.ingress.address }}/health

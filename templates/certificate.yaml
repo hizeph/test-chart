@@ -1,0 +1,29 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ template "echo-server.name" . }}
+spec:
+  commonName: {{ .Values.ingress.address }}
+  dnsNames:
+  - {{ .Values.ingress.address }}
+  emailAddresses:
+  - 4WheelsManagedCertificates@list.bmw.com
+  issuerRef:
+    kind: ClusterIssuer
+    group: cert-manager.pki.bmwgroup.net
+    name: cards-issuer-cluster-issuer
+  privateKey:
+    rotationPolicy: Always
+  renewBefore: 720h0m0s
+  secretName: echo-server-tls
+  subject:
+    countries:
+    - DE
+    localities:
+    - Munich
+    organizationalUnits:
+    - PKI Services
+    organizations:
+    - Bayerische Motoren Werke AG
+    provinces:
+    - Bavaria
