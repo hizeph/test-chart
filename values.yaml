@@ -1,6 +1,6 @@
 deployment:
   image:
-    repository: public.ecr.aws/v7n2v9r3/4wm-echo-server
+    repository: nexus.bmwgroup.net/grafana/k6-operator
     tag: latest
 
   replicas: 1
@@ -14,4 +14,4 @@ deployment:
       memory: 150Mi
 
 ingress:
-  address:  echo-server-test.apps.4wm-development.azure.cloud.bmw
+  address: echo-test.apps.4wm-development.azure.cloud.bmw
